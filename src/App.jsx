@@ -53,15 +53,8 @@ function App() {
         className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 text-center rounded-lg shadow-lg bg-slate-600 py-6 px-4 transition-all duration-500 transform hover:scale-105"
       >
 
-        {/* <div className="flex items-center mt-8 mb-12 ml-24 space-x-1 rtl:space-x-reverse">
-          <img src="/src/assets/chat-bot_13888994.png" className="h-20" alt="Flowbite Logo" />
-          <span className="text-4xl font-bold text-stone-100 pl-4">Chat Bot</span>
-        </div> */}
         <h1 className="text-4xl font-bold text-stone-100 mb-4 animate-bounce">Chat Bot</h1>
-      {/* <a href="https://www.freepik.com/icon/robotic_2728279#fromView=keyword&page=1&position=7&uuid=7f80d79e-5394-4395-b6f1-f483012532ab">Icon by surang</a> */}
-        {/* <img src="/src/assets/chat-bot_13888994.png" className="h-20" alt="Flowbite Logo" /> */}
-        {/* <a href="https://www.flaticon.com/free-icons/chatbot" title="chatbot icons">Chatbot icons created by Freepik - Flaticon</a> */}
-        {/* <h1 className="text-4xl font-bold text-stone-100 mb-4 animate-bounce">Chat Bot</h1> */}
+
         <textarea
           required
           className="border border-gray-300 text-center rounded w-full my-2 min-h-fit p-3 transition-all duration-300 focus:border-blue-400 focus:shadow-lg"
