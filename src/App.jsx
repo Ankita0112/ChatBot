@@ -47,7 +47,7 @@ function App() {
   return (
     <>
     <div className="bg-gradient-to-r from-slate-800 to-slate-900 min-h-screen p-3 flex flex-col justify-center items-center">
-      <img src="/src/assets/chat-bot_13888994.png" className="h-20 mb-6" alt="Flowbite Logo" />
+      <img src="https://cdn-icons-png.flaticon.com/128/6231/6231553.png" className="h-20 mb-6" alt="Flowbite Logo" />
       <form
         onSubmit={generateAnswer}
         className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3 text-center rounded-lg shadow-lg bg-slate-600 py-6 px-4 transition-all duration-500 transform hover:scale-105"
