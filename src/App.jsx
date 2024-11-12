@@ -10,15 +10,21 @@ function App() {
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
   const [loading, setLoading] = useState(false);
   const [value, setValue] = useState(false);
+  const [chat, setChat] = useState([]);
 
 
 
   async function generateAnswer(e) {
-    // setValue(false);
+  
     setGeneratingAnswer(true);
     setLoading(true);
     e.preventDefault();
-    // <Spinner />
+    const userMessage = `user: ${question}`;
+    const botMessagePlaceholder = "bot: ";
+
+    setChat(prevChat => [...prevChat, userMessage, botMessagePlaceholder]);
+
+    console.log(chat)
 
     try {
       const response = await axios({
@@ -27,18 +33,20 @@ function App() {
         }`,
         method: "post",
         data: {
-          contents: [{ parts: [{ text: question }] }],
+          contents: [{ parts: [{ text: `You are the bot and user will talk to you below is the conversation reply accordingly. ${[...chat, userMessage].join(' ')}` }] }],
         },
       });
+      const botResponse = response.data.candidates[0].content.parts[0].text;
+      setAnswer(botResponse.slice(5));
 
-      setAnswer(
-        response["data"]["candidates"][0]["content"]["parts"][0]["text"]
-      );
+      setChat(prevChat => [...prevChat, botResponse]);
+
     } catch (error) {
       console.log(error);
       setAnswer("Sorry - Something went wrong. Please try again!");
     }
-
+    // console.log(chat)
+    
     setGeneratingAnswer(false);
     setLoading(false);
     setValue(true);
